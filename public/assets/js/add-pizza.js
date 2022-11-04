@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const $addToppingBtn = document.querySelector("#add-topping");
 const $pizzaForm = document.querySelector("#pizza-form");
 const $customToppingsList = document.querySelector("#custom-toppings-list");
@@ -38,6 +36,7 @@ const handlePizzaSubmit = (event) => {
   const pizzaName = $pizzaForm.querySelector("#pizza-name").value;
   const createdBy = $pizzaForm.querySelector("#created-by").value;
   const size = $pizzaForm.querySelector("#pizza-size").value;
+  // transform DOM data into a real array of objects to execute .map()
   const toppings = [
     ...$pizzaForm.querySelectorAll("[name=topping]:checked"),
   ].map((topping) => {
